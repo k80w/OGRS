@@ -130,8 +130,7 @@
                 var names = [];
                 var options = f.getElementsByTagName("input");
                 for (i = 0; i < options.length; i++) {
-                    var o = options[i]
-                    //console.log(o.value, options[o.name].value);
+                    var o = options[i];
                     if (o.type != "button" && o.value != "None" && o.value == f[o.name].value) {
                         if (o.type == "radio") {
                             reasons.push(o.value);
@@ -143,15 +142,15 @@
                 }
                 reasons.sort();
                 if ((2 + reasons.length) * 16 > ce.height) {
-                    ce.height = (2 + reasons.length) * 16
+                    ce.height = (2 + reasons.length) * 16;
                 } else {
                     ce.height = 96;
                 }
 
-                if (ogrsImgSettings.size.value=="Large") {
-                    ce.width = 320
+                if (ogrsImgSettings.size.value == "Large") {
+                    ce.width = 320;
                 } else {
-                    ce.width = 68
+                    ce.width = 68;
                 }
 
                 c.fillStyle = "white";
