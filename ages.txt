@@ -1,0 +1,5 @@
+     Green | Y | Youth (Womb+)
+Blue-green | C | Child (7+)
+      Blue | P | PreTeen (10+)
+    Purple | T | Teen (13+)
+       Red | A | Adult (18+)

@@ -1,0 +1,76 @@
+body {
+    font-family: Arial,sans-serif;
+    font-size: 11pt;
+    background-color: #F0F0F0;
+}
+#page {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    box-shadow: 0px 0px 2px #888888;
+    background-color: #FFFFFF;
+}
+
+hr {
+    border: none;
+    background-color: #D3D3D3;
+    height: 1px;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+    font-size: 70pt;
+    margin-top: 0;
+}
+h2 {
+    font-size: 24pt;
+}
+h3 {
+    font-size: 12pt;
+    margin-left: 16px;
+    font-weight: 700;
+    margin-top: 16px;
+}
+            
+b {
+    font-style: normal;
+    font-size: 11pt;
+}
+  
+input {
+    margin-left: 32px;
+}
+/*input[value="None"] {
+    margin-left: 16px;
+}*/  
+label {
+    font-style: italic;
+    font-size: 8pt;
+}
+
+nav {
+    text-align: center;
+    word-spacing: 16px;
+}
+nav a:link {
+    text-decoration: none;
+    color: #000000;
+}
+nav a:visited {
+    color: #000000;
+}
+
+.dotleft {
+    border-left: 1px dotted #7C7C7C;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>OGRS</title>
+        <base href="http://www.rectar2.net/ogrs/">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="graphics/x10/icon.png">
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <img src="graphics/x10/logo_white.png" alt="OGRS"><br/>
+                <b>O</b>pen-source <b>G</b>ame <b>R</b>ating <b>S</b>ystem
+            </header>
+            <hr/>
+            <nav>
+                <a href="">Home</a>
+                <a href="generator">Generator</a>
+            </nav>
+            <hr/>
+            <form id="ogrsForm" onchange="generate()">
+                <h2>Violence</h2>
+                <div class="dotleft">
+                    <input name="violence" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <h3>Cartoon Violence</h3>
+                    <input name="violence" type="radio" value="Mild Cartoon Violence"><label><b>Mild</b> - Depictions of cartoon-like characters in unsafe situations</label><br/>
+                    <input name="violence" type="radio" value="Cartoon Violence"><label><b>Moderate</b> - Depictions of cartoon-like characters in aggressive conflict</label><br/>
+                    <input name="violence" type="radio" value="Intense Cartoon Violence"><label><b>Intense</b> - Graphic depictions of violence involving cartoon-like characters</label><br/>
+                
+                    <h3>Fantasy Violence</h3>
+                    <input name="violence" type="radio" value="Mild Fantasy Violence"><label><b>Mild</b> - Depictions of characters in unsafe situations easily distinguishable from real life</label><br/>
+                    <input name="violence" type="radio" value="Fantasy Violence"><label><b>Moderate</b> - Depictions of characters in aggressive conflict easily distinguishable from real life</label><br/>
+                    <input name="violence" type="radio" value="Intense Fantasy Violence"><label><b>Intense</b> - Graphic depictions of violence involving situations easily distinguishable from real life</label><br/>
+
+                    <h3>Realistic Violence</h3>
+                    <input name="violence" type="radio" value="Mild Realistic Violence"><label><b>Mild</b> - Mild depictions of realistic characters in unsafe situations</label><br/>
+                    <input name="violence" type="radio" value="Realistic Violence"><label><b>Moderate</b> - Depictions of realistic characters in aggressive conflict</label><br/>
+                    <input name="violence" type="radio" value="Intense Realistic Violence"><label><b>Intense</b> - Graphic depictions of violence involving realistic characters</label><br/>
+
+                    <h3>Sexual Violence</h3>
+                    <input name="sexual_violence" type="checkbox" value="Sexual Violence"><label><b>Sexual Violence</b> - Depictions of or graphics references to violent sexual behavior</label>
+                </div>
+
+                <h2>Blood</h2>
+                <div class="dotleft">
+                    <input name="blood" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="blood" type="radio" value="Animated Blood"><label><b>Animated</b> - Unrealistic depictions of blood</label><br/>
+                    <input name="blood" type="radio" value="Realistic Blood"><label><b>Realistic</b> - Realistic depictions of blood</label><br/>
+                </div>
+
+                <h2>Drugs/Alcohol</h2>
+                <div class="dotleft">
+                    <h3>Alcohol</h3>
+                    <input name="alcohol" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="alcohol" type="radio" value="Alcohol Reference"><label><b>Reference</b> - References to or images of alcoholic beverages</label><br/>
+                    <input name="alcohol" type="radio" value="Alcohol Use"><label><b>Use</b> - Use of alcoholic beverages</label><br/>
+
+                    <h3>Drugs</h3>
+                    <input name="drugs" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="drugs" type="radio" value="Drug Reference"><label><b>Reference</b> - References to or images of illicit drugs</label><br/>
+                    <input name="drugs" type="radio" value="Drug Use"><label><b>Use</b> - Use of illicit drugs</label><br/>
+                </div>
+                
+                <h2>Sex/Nudity</h2>
+                <div class="dotleft">
+                    <h3>Nudity</h3>
+                    <input name="nudity" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="nudity" type="radio" value="Brief Nudity"><label><b>Brief Nudity</b> - Brief depictions of nudity or artistic nudity</label><br/>
+                    <input name="nudity" type="radio" value="Nudity"><label><b>Nudity</b> - Prolonged depictions of nudity</label><br/>
+
+                    <h3>Sexual Themes</h3>
+                    <input name="sexual_themes" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="sexual_themes" type="radio" value="Suggesstive Themes"><label><b>Suggestive Themes</b> - Provocative references or depictions</label><br/>
+                    <input name="sexual_themes" type="radio" value="Sexual Themes"><label><b>Sexual Themes</b> - Sexual references or depictions</label><br/>
+                    <input name="sexual_themes" type="radio" value="Strong Sexual Content"><label><b>Strong Sexual Content</b> - Graphic depictions of sexual behavior</label><br/>
+                </div>
+
+                <h2>Miscellaneous</h2>
+                <div class="dotleft">
+                    <h3>Language</h3>
+                    <input name="language" type="radio" value="None" checked="checked"><label><b>None</b></label><br/>
+                    <input name="language" type="radio" value="Mild Language"><label><b>Mild</b> - Mild or infrequent use of profanity</label><br/>
+                    <input name="language" type="radio" value="Moderate Language"><label><b>Moderate</b> - Moderate use of profanity</label><br/>
+                    <input name="language" type="radio" value="Strong Language"><label><b>Strong</b> - Strong or frequent use of profanity</label><br/>
+                </div>
+            </form>
+            <br/>
+            <hr/>
+            <br style="height: 16px;"/>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form id="ogrsImgSettings" onchange="generate()">
+                                <label><b>Rating </b></label><select name="rating">
+                                    <option value="Y">Youth (Womb+)</option>
+                                    <option value="C">Child (7+)</option>
+                                    <option value="P">PreTeen (10+)</option>
+                                    <option value="T">Teen (13+)</option>
+                                    <option value="A">Adult (18+)</option>
+                                </select><br/>
+                                <label><b>Size </b></label><select name="size">
+                                    <option>Small</option>
+                                    <option selected>Large</option>
+                                </select>
+                            </form>
+                        </td>
+                        <td>
+                            <canvas id="ogrsCanvas" width="320" height="96" style="position:inherit;right: 0px;"></canvas>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var ce = document.getElementById("ogrsCanvas");
+            var c = ce.getContext("2d");
+            var f = document.getElementById("ogrsForm");
+            var ogrsLogo = new Image();
+            ogrsLogo.src = "http://www.rectar2.net/ogrs/graphics/x2/logo_black.png";
+            var ratingImg = {
+                "Y": y = new Image()
+            }
+            ratingImg.Y.src = "graphics/x2/rating_y.png";
+            function generate() {
+                reasons = [];
+                var names = [];
+                var options = f.getElementsByTagName("input");
+                for (i = 0; i < options.length; i++) {
+                    var o = options[i]
+                    //console.log(o.value, options[o.name].value);
+                    if (o.type != "button" && o.value != "None" && o.value == f[o.name].value) {
+                        if (o.type == "radio") {
+                            reasons.push(o.value);
+                        }
+                        if (o.type == "checkbox" && o.checked) {
+                            reasons.push(o.value);
+                        }
+                    }
+                }
+                reasons.sort();
+                if ((2 + reasons.length) * 16 > ce.height) {
+                    ce.height = (2 + reasons.length) * 16
+                } else {
+                    ce.height = 96;
+                }
+
+                if (ogrsImgSettings.size.value=="Large") {
+                    ce.width = 320
+                } else {
+                    ce.width = 68
+                }
+
+                c.fillStyle = "white";
+                c.fillRect(0, 0, 512, 512);
+                c.fillStyle = "black";
+                c.font = "Bold 11pt Arial";
+                for (r = 0; r < reasons.length; r++) {
+                    var y = ((r + 2) * 16);
+                    var x = 72;
+                    var t = reasons[r];
+                    c.fillText(t, x, y);
+                    console.log(":", t, x, y);
+                }
+                c.fillStyle = "black";
+                c.fillRect(0, 0, 320, 16);              // Fill top bar
+                c.fillRect(0, 0, 68, 512);              // Fill sidebar
+
+                c.fillRect(0, ce.height - 2, 512, 512); // Bottom border
+                c.fillRect(ce.width - 2, 0, 512, 512);  // Right border
+
+                c.drawImage(ogrsLogo, 0, 0);            // Draw logo
+
+                c.drawImage(ratingImg[ogrsImgSettings.rating.value], 2, 16);     // Draw rating image
+
+            }
+        </script>
+    </body>
+</html>
