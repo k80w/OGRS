@@ -70,7 +70,6 @@ function generate() {
         console.log(":", t, x, y);
     }
     c.fillStyle = "black";
-    //c.fillRect(0, 0, 320, 16);              // Fill top bar
     c.fillRect(0, 0, 68, 512);              // Fill sidebar
 
     c.fillRect(0, 0, 512, 2);               // Top border
@@ -79,6 +78,6 @@ function generate() {
 
     c.drawImage(ogrsLogo, 2, 0);            // Draw logo
 
-    //c.drawImage(ratingImg[ogrsImgSettings.rating.value], 2, 16);     // Draw rating image
+    c.drawImage(ratingImg[ogrsImgSettings.rating.value], 2, 16);
     c.drawImage(ratingBannerImg[ogrsImgSettings.rating.value], 2, 80);
 }
