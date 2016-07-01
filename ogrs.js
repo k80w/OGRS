@@ -24,7 +24,7 @@ var ratingBannerImg = {
 ratingBannerImg.Y.src = "./graphics/x2/rating_banner_y.png";
 ratingBannerImg.P.src = "./graphics/x2/rating_banner_p.png";
 ratingBannerImg.T.src = "./graphics/x2/rating_banner_t.png";
-ratingBannerImg.A.src = "/graphics/x2/rating_banner_a.png";
+ratingBannerImg.A.src = "./graphics/x2/rating_banner_a.png";
 
 function generate() {
     reasons = [];
