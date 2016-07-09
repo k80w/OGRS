@@ -27,6 +27,7 @@ ratingBannerImg.T.src = "./graphics/x2/rating_banner_t.png";
 ratingBannerImg.A.src = "./graphics/x2/rating_banner_a.png";
 
 function generate() {
+    ce.height = 0;
     reasons = [];
     var names = [];
     var options = f.getElementsByTagName("input");
@@ -42,11 +43,8 @@ function generate() {
         }
     }
     reasons.sort();
-    if ((0.25 + reasons.length) * 16 > ce.height) {
-        ce.height = (0.25 + reasons.length) * 16;
-    } else {
-        ce.height = 96;
-    }
+
+    ce.height = Math.max(96, (0.25 + reasons.length) * 16);
 
     if (ogrsImgSettings.size.value == "Large") {
         ce.width = 320;
